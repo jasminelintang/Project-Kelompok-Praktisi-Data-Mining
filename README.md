@@ -1281,7 +1281,9 @@ for i in [-1,-2]:
     
 <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya.png'>
 
-    
+
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/e3907adc9cb8c1b4b62925d93f08f4267b093095/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya%202.png'>
+
 
 
 Grafik di atas merupakan grafik yang menggambarkan hubungan antara jenis nyeri dada dengan beberapa faktor gagal jantung lainnya
