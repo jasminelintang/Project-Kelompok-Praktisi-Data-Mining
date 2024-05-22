@@ -840,7 +840,7 @@ plt.show()
 
 
     
-![png](output_22_0.png)
+<img src = 'https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/heatmap%20korelasi%202.png'>
     
 
 
@@ -872,7 +872,7 @@ plt.show()
 
 
     
-![png](output_23_0.png)
+<img src = 'https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/anova%20score.png'>
     
 
 
