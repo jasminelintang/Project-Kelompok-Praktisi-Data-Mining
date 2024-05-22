@@ -1,6 +1,6 @@
 # **Project Data Mining**
 
-## **Data Prediksi Penyakit Gagal Jantung**
+## **💔Data Prediksi Penyakit Gagal Jantung**
 
 ## **1. Business Understanding**
 
@@ -1018,7 +1018,7 @@ fig.tight_layout(pad = 2)
 
 
     
-![png](output_26_0.png)
+<img src = 'https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20faktor.png'>
     
 
 
@@ -1085,7 +1085,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)
+<img src = 'https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20jumlah%20responden.png'>
     
 
 
@@ -1115,7 +1115,7 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+<img src = 'https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20jumlah%20responden.png'>
     
 
 
