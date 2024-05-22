@@ -2,7 +2,8 @@
 
 ## Prediksi Penyakit Gagal Jantung Berdasarkan Beberapa Faktor
 
-### Gagal jantung atau penyakit jantung koroner merupakan kondisi serius yang dapat disebabkan oleh berbagai faktor. Berikut adalah penjelasan dari setiap faktor yang dapat mempengaruhi risiko penyakit jantung berdasarkan data yang diberikan:
+### 
+Gagal jantung atau penyakit jantung koroner merupakan kondisi serius yang dapat disebabkan oleh berbagai faktor. Berikut adalah penjelasan dari setiap faktor yang dapat mempengaruhi risiko penyakit jantung berdasarkan data yang diberikan:
 
 - Age (Usia):
 Usia yang lebih tua biasanya meningkatkan risiko penyakit jantung karena akumulasi kerusakan pada pembuluh darah dan jantung seiring waktu.
