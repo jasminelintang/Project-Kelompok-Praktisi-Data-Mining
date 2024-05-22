@@ -815,7 +815,7 @@ plt.show()
 
 
     
-![png](output_20_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/heatmap%20korelasi.png'>
     
 
 
@@ -840,7 +840,7 @@ plt.show()
 
 
     
-![png](output_22_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/heatmap%20korelasi%202.png'>
     
 
 
@@ -872,7 +872,7 @@ plt.show()
 
 
     
-![png](output_23_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/anova%20score.png'>
     
 
 
@@ -1018,7 +1018,7 @@ fig.tight_layout(pad = 2)
 
 
     
-![png](output_26_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20faktor.png'>
     
 
 
@@ -1085,7 +1085,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20jumlah%20responden.png'>
     
 
 
@@ -1115,7 +1115,7 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20beberapa%20faktor%20vs%20heartdisease.png'>
     
 
 
@@ -1197,7 +1197,9 @@ plt.title('ST_Slope');
 
 
     
-![png](output_35_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/pie%20chart%20perbandingan%20setiap%20kategori%20pada%20faktor.png'>
+
+
     
 
 
@@ -1246,13 +1248,9 @@ for i in [-1,-2]:
 
 
     
-![png](output_37_0.png)
-    
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya.png'>
 
 
-
-    
-![png](output_37_1.png)
     
 
 
@@ -1284,13 +1282,8 @@ for i in [-1,-2]:
 
 
     
-![png](output_39_0.png)
-    
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya.png'>
 
-
-
-    
-![png](output_39_1.png)
     
 
 
@@ -1356,7 +1349,9 @@ plt.show()
 
 
     
-![png](output_44_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20usia%20dan%20kolesterol.png'>
+
+
     
 
 
@@ -1390,7 +1385,9 @@ plt.show()
 
 
     
-![png](output_46_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20usia%20dan%20tekanan%20darah%20istirahat.png'>
+
+
     
 
 
@@ -1424,7 +1421,9 @@ plt.show()
 
 
     
-![png](output_48_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20detak%20jantung%20maksimum%20dan%20tekanan%20darah%20istirahat.png'>
+
+
     
 
 
@@ -1786,7 +1785,9 @@ model(classifier_lr)
 
 
     
-![png](output_56_2.png)
+<img src='https://github.com/jasminelintang/Tugas-Data-Mining-EDA-Finding-Happiness/blob/228faef1fb2462a5f7c7decd63e0eebcee2e2f87/MostPopulatedCountry.png'>
+
+
     
 
 
@@ -1808,7 +1809,9 @@ model_evaluation(classifier_lr)
 
 
     
-![png](output_57_1.png)
+<img src='https://github.com/jasminelintang/Tugas-Data-Mining-EDA-Finding-Happiness/blob/228faef1fb2462a5f7c7decd63e0eebcee2e2f87/MostPopulatedCountry.png'>
+
+
     
 
 
