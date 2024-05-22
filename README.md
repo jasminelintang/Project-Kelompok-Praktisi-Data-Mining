@@ -1316,6 +1316,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.metrics import precision_recall_curve
 from sklearn.linear_model import LogisticRegression
 from sklearn.cluster import KMeans
+
 ```
 
 
@@ -1434,6 +1435,382 @@ Grafik di atas menggambarkan klastering antara **MaxHR (detak jantung maksimum) 
 **Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian tengah-bawah plot, menunjukkan responden dengan RestingBP yang lebih rendah dan nilai MaxHR yang bervariasi.
 
 **Cluster 2 (Kuning)**: Titik-titik berwarna kuning tersebar di seluruh rentang MaxHR tetapi lebih terkonsentrasi di bagian tengah atas sumbu Y (RestingBP), menunjukkan responden dengan RestingBP yang lebih tinggi.
+
+## **Logistic Regression** 
+
+
+```python
+pip install --upgrade scikit-learn
+```
+
+    Requirement already satisfied: scikit-learn in c:\users\asus vivobook\anaconda3\lib\site-packages (1.5.0)
+    Requirement already satisfied: numpy>=1.19.5 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.24.3)
+    Requirement already satisfied: scipy>=1.6.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.11.1)
+    Requirement already satisfied: joblib>=1.2.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.2.0)
+    Requirement already satisfied: threadpoolctl>=3.1.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (3.5.0)
+    Note: you may need to restart the kernel to use updated packages.
+    
+
+
+```python
+features = df1[df1.columns.drop(['HeartDisease','RestingBP','RestingECG'])].values
+target = df1['HeartDisease'].values
+x_train, x_test, y_train, y_test = train_test_split(features, target, test_size = 0.20, random_state = 2)
+```
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import accuracy_score, roc_auc_score, classification_report, confusion_matrix, roc_curve, auc
+from sklearn.model_selection import cross_val_score, RepeatedStratifiedKFold
+
+def model(classifier):
+    classifier.fit(x_train, y_train)
+    prediction = classifier.predict(x_test)
+    prediction_proba = classifier.predict_proba(x_test)[:, 1]
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+    
+    accuracy = accuracy_score(y_test, prediction)
+    cross_val = cross_val_score(classifier, x_train, y_train, cv=cv, scoring='roc_auc').mean()
+    roc_auc = roc_auc_score(y_test, prediction)
+    
+    print("Accuracy: {:.2%}".format(accuracy))
+    print("Cross Validation Score: {:.2%}".format(cross_val))
+    print("ROC_AUC Score: {:.2%}".format(roc_auc))
+    
+    fpr, tpr, _ = roc_curve(y_test, prediction_proba)
+    roc_auc = auc(fpr, tpr)
+    
+    plt.figure()
+    plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
+    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.show()
+
+def model_evaluation(classifier):
+    # Confusion Matrix
+    cm = confusion_matrix(y_test, classifier.predict(x_test))
+    names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
+    counts = [value for value in cm.flatten()]
+    percentages = ['{0:.2%}'.format(value) for value in cm.flatten() / np.sum(cm)]
+    labels = [f'{v1}\n{v2}\n{v3}' for v1, v2, v3 in zip(names, counts, percentages)]
+    labels = np.asarray(labels).reshape(2, 2)
+    sns.heatmap(cm, annot=labels, cmap='Blues', fmt='')
+
+    # Classification Report
+    print(classification_report(y_test, classifier.predict(x_test)))
+
+# Example usage:
+# Assuming x_train, y_train, x_test, y_test are already defined and classifier_lr is your classifier
+# model(classifier_lr)
+# model_evaluation(classifier_lr)
+
+```
+
+
+```python
+from sklearn.linear_model import LogisticRegression
+```
+
+
+```python
+classifier_lr = LogisticRegression(random_state = 0,C=10,penalty= 'l2') 
+```
+
+
+```python
+model(classifier_lr)
+```
+
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+    
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+    Please also refer to the documentation for alternative solver options:
+        https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+      n_iter_i = _check_optimize_result(
+    
+
+    Accuracy: 84.78%
+    Cross Validation Score: 91.06%
+    ROC_AUC Score: 84.70%
+    
+
+
+    
+![png](output_56_2.png)
+    
+
+
+
+```python
+model_evaluation(classifier_lr)
+```
+
+                  precision    recall  f1-score   support
+    
+               0       0.86      0.82      0.84        89
+               1       0.84      0.87      0.86        95
+    
+        accuracy                           0.85       184
+       macro avg       0.85      0.85      0.85       184
+    weighted avg       0.85      0.85      0.85       184
+    
+    
+
+
+    
+![png](output_57_1.png)
+    
+
 
 
 ```python
