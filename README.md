@@ -1,6 +1,6 @@
 # **Project Data Mining**
 
-##🫀 **Data Prediksi Penyakit Gagal Jantung**
+🫀 ## **Data Prediksi Penyakit Gagal Jantung**
 
 ## **1. Business Understanding**
 
