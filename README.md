@@ -1198,10 +1198,7 @@ plt.title('ST_Slope');
 
     
 <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/pie%20chart%20perbandingan%20setiap%20kategori%20pada%20faktor.png'>
-
-
     
-
 
 Berikut penjelasan dari pie chart di atas :
 *   Pada diagram **jenis kelamin**, menunjukkan bahwa responden pria lebih banyak mengalami gagal jantung dibandingkan dengan responden wanita.
@@ -1250,10 +1247,10 @@ for i in [-1,-2]:
     
 <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya.png'>
 
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/fd85859db28a3b0a43bd330ca1344184c193c3d9/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya%202.png'>
+
 
     
-
-
 Grafik di atas merupakan grafik yang menggambarkan hubungan antara jenis kelamin dengan beberapa faktor gagal jantung lainnya
 *   Grafik 1 menggambarkan hubungan antara **jenis kelamin dengan usia** di mana grafik menunjukkan bahwa responden pria dengan usia >50 lebih banyak yang merupakan penderita gagal jantung sedangkan responden wanita dengan usia >50 juga lebih banyak yang merupakan penderita gagal jantung
 *   Grafik  2 menggambarkan hubungan antara **jenis kelamin dengan tekanan darah istirahat** di mana grafik menunjukkan bahwa responden pria dengan tekanan darah >100 lebih banyak yang merupakan penderita gagal jantung sedangkan responden wanita dengan tekanan darah >100 lebih banyak yang bukan merupakan penderita gagal jantung
@@ -1288,11 +1285,11 @@ for i in [-1,-2]:
 
 
 Grafik di atas merupakan grafik yang menggambarkan hubungan antara jenis nyeri dada dengan beberapa faktor gagal jantung lainnya
-*   Grafik 1 menggambarkan hubungan antara jenis nyeri dada dengan usia di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA yang berusia > 60, kategori nyeri dada NAP yang berusia > 60, kategori nyeri dada ASY yang berusia > 40, kategori nyeri dada TA yang berusia > 40.
-*   Grafik 2 menggambarkan hubungan antara jenis nyeri dada dengan tekanan darah istirahat di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP yang yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY yang memiliki tekanan darah > 100 lebih banyak merupakan penderita gagal jantung, kategori nyeri dada TA yang memiliki tekanan darah > 100 seimbang antara penderita dan bukan penderita gagal jantung.
-*   Grafik 3 menggambarkan hubungan antara jenis nyeri dada dengan kolesterol di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat kolesterol > 200 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat kolesterol 200-300 lebih banyak bukan penderita gagal jantung.
-*   Grafik 4 menggambarkan hubungan antara jenis nyeri dada dengan perubahan segmen ST pada EKG di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat oldpeak >0 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat oldpeak >0 seimbang antara penderita dan bukan penderita gagal jantung.
-*   Grafik 5 menggambarkan hubungan antara jenis nyeri dada dengan detak jantung maksimal  di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat detak jantung > 100 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat detak jantung > 100 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 1 menggambarkan hubungan antara **jenis nyeri dada dengan usia** di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA yang berusia > 60, kategori nyeri dada NAP yang berusia > 60, kategori nyeri dada ASY yang berusia > 40, kategori nyeri dada TA yang berusia > 40.
+*   Grafik 2 menggambarkan hubungan antara **jenis nyeri dada dengan tekanan darah istirahat** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP yang yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY yang memiliki tekanan darah > 100 lebih banyak merupakan penderita gagal jantung, kategori nyeri dada TA yang memiliki tekanan darah > 100 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 3 menggambarkan hubungan antara **jenis nyeri dada dengan kolesterol** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat kolesterol > 200 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat kolesterol 200-300 lebih banyak bukan penderita gagal jantung.
+*   Grafik 4 menggambarkan hubungan antara **jenis nyeri dada dengan perubahan segmen ST pada EKG** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat oldpeak >0 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat oldpeak >0 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 5 menggambarkan hubungan antara **jenis nyeri dada dengan detak jantung maksimal**  di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat detak jantung > 100 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat detak jantung > 100 seimbang antara penderita dan bukan penderita gagal jantung.
 
 # **Modelling (Clustering)**
 
