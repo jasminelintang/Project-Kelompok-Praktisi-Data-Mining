@@ -820,8 +820,8 @@ plt.show()
 
 
 
-*   Warna merah menunjukkan korelasi negatif
-*   Warna kuning menunjukkan korelasi positif
+*   Warna merah menunjukkan korelasi positif
+*   Warna biru menunjukkan korelasi negatif
 *   Korelasi antara **Age** dan **RestingBP** adalah 0.25 yang berarti ada korelasi positif antara usia dan tekanan darah saat istirahat.
 *   Korelasi antara **MaxHR** dan **HeartDisease** adalah -0.4 yang berarti ada korelasi negatif antara denyut jantung maksimum dan penyakit jantung (semakin tinggi denyut jantung maksimum, maka semakin rendah kemungkinan penyakit jantung)
 
