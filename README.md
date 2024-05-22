@@ -1784,7 +1784,7 @@ model(classifier_lr)
 
 
     
-<img src='https://github.com/jasminelintang/Tugas-Data-Mining-EDA-Finding-Happiness/blob/228faef1fb2462a5f7c7decd63e0eebcee2e2f87/MostPopulatedCountry.png'>
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/6c593ebff6536b8a31457f1375c2d6b2db8bd433/logistic%20regression.png'>
 
 
     
@@ -1808,7 +1808,7 @@ model_evaluation(classifier_lr)
 
 
     
-<img src='https://github.com/jasminelintang/Tugas-Data-Mining-EDA-Finding-Happiness/blob/228faef1fb2462a5f7c7decd63e0eebcee2e2f87/MostPopulatedCountry.png'>
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/6c593ebff6536b8a31457f1375c2d6b2db8bd433/model%20evaluasi.png'>
 
 
     
