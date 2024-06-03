@@ -1234,13 +1234,12 @@ for i in [-1,-2]:
 
 
     
-![png](output_37_0.png)
-    
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/6ab1d5c137424dabb85165dd64dbc5ab9a740d0e/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya.png'>   
 
 
 
-    
-![png](output_37_1.png)
+
+ <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya%202.png'>     
     
 
 
