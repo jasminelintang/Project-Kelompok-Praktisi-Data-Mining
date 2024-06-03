@@ -1,6 +1,6 @@
 # **Project Data Mining**
 
-## **🫀Data Prediksi Penyakit Gagal Jantung**
+## **Data Prediksi Penyakit Gagal Jantung**
 
 ## **1. Business Understanding**
 
@@ -563,13 +563,13 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
 # Asumsikan `data` adalah DataFrame Anda dan `categorical_features` adalah daftar kolom kategorikal
-fitur_kategorikal = ['Age', 'Sex',]  # Ganti dengan nama fitur kategorikal Anda
+fitur_kategorikal = ['Age', 'Sex']  # Ganti dengan nama fitur kategorikal Anda
 
 # Memilih data kategorikal
 data_kategorikal = data[fitur_kategorikal]
 
 # One-Hot Encoding
-encoder = OneHotEncoder(drop='first', sparse=False)  # drop='first' menghindari multicollinearity
+encoder = OneHotEncoder(drop='first', sparse_output=False)  # drop='first' menghindari multicollinearity
 data_encoded = encoder.fit_transform(data_kategorikal)
 
 # Mengubah data yang di-encode menjadi DataFrame
@@ -607,10 +607,6 @@ print(data_terencode.head())
     [5 rows x 60 columns]
     
 
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\preprocessing\_encoders.py:972: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
-      warnings.warn(
-    
-
 
 ```python
 import pandas as pd
@@ -623,7 +619,7 @@ fitur_kategorikal = ['Age', 'Cholesterol',]  # Ganti dengan nama fitur kategorik
 data_kategorikal = data[fitur_kategorikal]
 
 # One-Hot Encoding
-encoder = OneHotEncoder(drop='first', sparse=False)  # drop='first' menghindari multicollinearity
+encoder = OneHotEncoder(drop='first', sparse_output=False)  # drop='first' menghindari multicollinearity
 data_encoded = encoder.fit_transform(data_kategorikal)
 
 # Mengubah data yang di-encode menjadi DataFrame
@@ -665,10 +661,6 @@ print(data_terencode.head())
     4              0.0              0.0              0.0              0.0  
     
     [5 rows x 280 columns]
-    
-
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\preprocessing\_encoders.py:972: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
-      warnings.warn(
     
 
 ## **3.3 Visualisasi Data**
@@ -815,7 +807,7 @@ plt.show()
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/heatmap%20korelasi.png'>
+![png](output_20_0.png)
     
 
 
@@ -840,7 +832,7 @@ plt.show()
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/heatmap%20korelasi%202.png'>
+![png](output_22_0.png)
     
 
 
@@ -872,7 +864,7 @@ plt.show()
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/anova%20score.png'>
+![png](output_23_0.png)
     
 
 
@@ -1018,7 +1010,7 @@ fig.tight_layout(pad = 2)
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20faktor.png'>
+![png](output_26_0.png)
     
 
 
@@ -1085,7 +1077,7 @@ plt.show()
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20jumlah%20responden.png'>
+![png](output_30_0.png)
     
 
 
@@ -1115,7 +1107,7 @@ plt.show()
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/perbandingan%20beberapa%20faktor%20vs%20heartdisease.png'>
+![png](output_32_0.png)
     
 
 
@@ -1181,24 +1173,25 @@ plt.pie(slope,labels = ['Flat','Up','Down'],autopct='%1.1f%%',startangle = 90,ex
 plt.title('ST_Slope');
 ```
 
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:3: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:3: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,1)
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:8: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:8: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,2)
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:12: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:12: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,3)
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:17: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:17: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,4)
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:21: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:21: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,5)
-    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_2312\1626816102.py:26: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+    C:\Users\ASUS VIVOBOOK\AppData\Local\Temp\ipykernel_13544\1626816102.py:26: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
       plt.subplot(3,2,6)
     
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/pie%20chart%20perbandingan%20setiap%20kategori%20pada%20faktor.png'>
+![png](output_35_1.png)
     
+
 
 Berikut penjelasan dari pie chart di atas :
 *   Pada diagram **jenis kelamin**, menunjukkan bahwa responden pria lebih banyak mengalami gagal jantung dibandingkan dengan responden wanita.
@@ -1245,12 +1238,16 @@ for i in [-1,-2]:
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya.png'>
+![png](output_37_0.png)
+    
 
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/fd85859db28a3b0a43bd330ca1344184c193c3d9/grafik%20jenis%20kelamin%20vs%20faktor%20lainnya%202.png'>
 
 
     
+![png](output_37_1.png)
+    
+
+
 Grafik di atas merupakan grafik yang menggambarkan hubungan antara jenis kelamin dengan beberapa faktor gagal jantung lainnya
 *   Grafik 1 menggambarkan hubungan antara **jenis kelamin dengan usia** di mana grafik menunjukkan bahwa responden pria dengan usia >50 lebih banyak yang merupakan penderita gagal jantung sedangkan responden wanita dengan usia >50 juga lebih banyak yang merupakan penderita gagal jantung
 *   Grafik  2 menggambarkan hubungan antara **jenis kelamin dengan tekanan darah istirahat** di mana grafik menunjukkan bahwa responden pria dengan tekanan darah >100 lebih banyak yang merupakan penderita gagal jantung sedangkan responden wanita dengan tekanan darah >100 lebih banyak yang bukan merupakan penderita gagal jantung
@@ -1279,19 +1276,22 @@ for i in [-1,-2]:
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/baf48dbddc53b2ae93a8c00d6202c9afbd489620/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya.png'>
+![png](output_39_0.png)
+    
 
 
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/e3907adc9cb8c1b4b62925d93f08f4267b093095/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya%202.png'>
 
+    
+![png](output_39_1.png)
+    
 
 
 Grafik di atas merupakan grafik yang menggambarkan hubungan antara jenis nyeri dada dengan beberapa faktor gagal jantung lainnya
-*   Grafik 1 menggambarkan hubungan antara **jenis nyeri dada dengan usia** di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA yang berusia > 60, kategori nyeri dada NAP yang berusia > 60, kategori nyeri dada ASY yang berusia > 40, kategori nyeri dada TA yang berusia > 40.
-*   Grafik 2 menggambarkan hubungan antara **jenis nyeri dada dengan tekanan darah istirahat** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP yang yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY yang memiliki tekanan darah > 100 lebih banyak merupakan penderita gagal jantung, kategori nyeri dada TA yang memiliki tekanan darah > 100 seimbang antara penderita dan bukan penderita gagal jantung.
-*   Grafik 3 menggambarkan hubungan antara **jenis nyeri dada dengan kolesterol** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat kolesterol > 200 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat kolesterol 200-300 lebih banyak bukan penderita gagal jantung.
-*   Grafik 4 menggambarkan hubungan antara **jenis nyeri dada dengan perubahan segmen ST pada EKG** di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat oldpeak >0 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat oldpeak >0 seimbang antara penderita dan bukan penderita gagal jantung.
-*   Grafik 5 menggambarkan hubungan antara **jenis nyeri dada dengan detak jantung maksimal**  di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat detak jantung > 100 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat detak jantung > 100 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 1 menggambarkan hubungan antara jenis nyeri dada dengan usia di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA yang berusia > 60, kategori nyeri dada NAP yang berusia > 60, kategori nyeri dada ASY yang berusia > 40, kategori nyeri dada TA yang berusia > 40.
+*   Grafik 2 menggambarkan hubungan antara jenis nyeri dada dengan tekanan darah istirahat di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP yang yang memiliki tekanan darah > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY yang memiliki tekanan darah > 100 lebih banyak merupakan penderita gagal jantung, kategori nyeri dada TA yang memiliki tekanan darah > 100 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 3 menggambarkan hubungan antara jenis nyeri dada dengan kolesterol di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat kolesterol > 200 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat kolesterol > 200 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat kolesterol 200-300 lebih banyak bukan penderita gagal jantung.
+*   Grafik 4 menggambarkan hubungan antara jenis nyeri dada dengan perubahan segmen ST pada EKG di mana grafik menunjukkan bahwa responden dengan kategori nyeri dada ATA dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat oldpeak >0 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat oldpeak >0 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat oldpeak >0 seimbang antara penderita dan bukan penderita gagal jantung.
+*   Grafik 5 menggambarkan hubungan antara jenis nyeri dada dengan detak jantung maksimal  di mana grafik menunjukkan bahwa banyak responden penderita gagal jantung dengan kategori nyeri dada ATA dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada NAP dengan tingkat detak jantung > 100 lebih banyak bukan penderita gagal jantung, kategori nyeri dada ASY dengan tingkat detak jantung > 100 lebih banyak penderita gagal jantung, kategori nyeri dada TA dengan tingkat detak jantung > 100 seimbang antara penderita dan bukan penderita gagal jantung.
 
 # **Modelling (Clustering)**
 
@@ -1327,6 +1327,22 @@ scaled_df = pd.DataFrame(scaled_features, columns=numerical_features)
 
 
 ```python
+#Clustering umur dan kolesterol
+data = {
+    'Age': [40, 49, 37, 48, 54, 45, 68, 57, 57, 38],
+    'Cholesterol': [289, 180, 283, 214, 195, 264, 193, 131, 236, 175],
+   
+}
+df1 = pd.DataFrame(data)
+
+# Memilih fitur yang akan di-scale
+features = ['Age', 'Cholesterol']
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(df1[features])
+
+# Mengubah hasil scaling menjadi DataFrame
+scaled_df = pd.DataFrame(scaled_features, columns=features)
+
 # Melakukan clustering dengan jumlah cluster yang optimal
 optimal_clusters = 3  # Misalkan berdasarkan metode Elbow
 kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=0)
@@ -1337,7 +1353,7 @@ df1['Cluster'] = clusters
 
 # Visualisasi hasil clustering
 plt.figure(figsize=(6, 3))
-sns.scatterplot(x=scaled_df['Age'], y=scaled_df['Cholesterol'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
+sns.scatterplot(x=df1['Age'], y=df1['Cholesterol'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
 plt.title('Clustering K-Means')
 plt.xlabel('Age')
 plt.ylabel('Cholesterol')
@@ -1346,24 +1362,42 @@ plt.show()
 
 ```
 
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1426: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+      warnings.warn(
+    
+
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20usia%20dan%20kolesterol.png'>
-
-
+![png](output_44_1.png)
     
 
 
 Grafik di atas menggambarkan klastering antara **Usia dengan Kolesterol** 
 
-**Cluster 0 (Ungu)**: Titik-titik berwarna ungu tersebar terutama di sekitar nilai normal untuk Age dan Cholesterol. Mereka tampak lebih terpusat dan menyebar dengan rata-rata yang lebih rendah di sepanjang kedua sumbu. Cluster 0 mewakili kelompok dengan karakteristik yang lebih rata-rata atau umum dalam data (usia sedang, kolesterol sedang).
+**Cluster 0 (Ungu)**: Titik-titik berwarna ungu tersebar terutama di sekitar nilai normal untuk Age dan Cholesterol. Mereka tampak lebih terpusat dan menyebar dengan rata-rata yang lebih rendah di sepanjang kedua sumbu. Cluster 0 mewakili kelompok dengan karakteristik yang lebih rata-rata atau umum dalam data (usia muda, kolesterol rendah).
 
-**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian bawah sumbu Y (Cholesterol) dengan rentang nilai yang lebih sempit untuk Age. Cluster 1 ini mungkin terdiri dari individu dengan kadar kolesterol yang lebih rendah dan rentang usia tertentu.
+**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian bawah sumbu Y (Cholesterol) dengan rentang nilai yang lebih sempit untuk Age. Cluster 1 ini mungkin terdiri dari individu dengan usia sedang dan kolesterol sedang.
 
-**Cluster 2 (Kuning)**: Titik-titik berwarna kuning cenderung lebih tersebar ke kanan pada sumbu X dan ke atas pada sumbu Y, menunjukkan bahwa cluster 2 ini mungkin terdiri dari individu dengan kadar kolesterol yang lebih tinggi dan usia yang lebih tua.
+**Cluster 2 (Kuning)**: Titik-titik berwarna kuning cenderung lebih tersebar ke kanan pada sumbu X dan ke atas pada sumbu Y, menunjukkan bahwa cluster 2 ini mungkin terdiri dari individu dengan usia tua dan kolesterol tinggi
 
 
 ```python
+#Clustering umur dan tekanan darah istirahat
+data = {
+    'Age': [40, 49, 37, 48, 54, 45, 68, 57, 57, 38],
+    'RestingBP': [140, 160, 130, 138, 140, 110, 144, 130, 130, 138],
+   
+}
+df1 = pd.DataFrame(data)
+
+# Memilih fitur yang akan di-scale
+features = ['Age', 'RestingBP']
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(df1[features])
+
+# Mengubah hasil scaling menjadi DataFrame
+scaled_df = pd.DataFrame(scaled_features, columns=features)
+
 # Melakukan clustering dengan jumlah cluster yang optimal
 optimal_clusters = 3  # Misalkan berdasarkan metode Elbow
 kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=0)
@@ -1374,32 +1408,51 @@ df1['Cluster'] = clusters
 
 # Visualisasi hasil clustering
 plt.figure(figsize=(6, 3))
-sns.scatterplot(x=scaled_df['Age'], y=scaled_df['RestingBP'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
+sns.scatterplot(x=df1['Age'], y=df1['RestingBP'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
 plt.title('Clustering K-Means')
 plt.xlabel('Age')
 plt.ylabel('RestingBP')
 plt.legend(title='Cluster')
 plt.show()
+
 ```
+
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1426: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+      warnings.warn(
+    
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20usia%20dan%20tekanan%20darah%20istirahat.png'>
-
-
+![png](output_46_1.png)
     
 
 
 Grafik di atas menggambarkan klastering antara **Usia dengan RestingBP (tekanan darah istirahat)** 
 
-**Cluster 0 (Ungu)**: Titik-titik berwarna ungu tersebar terutama di sekitar nilai normal untuk Age dan RestingBP. Mereka tampak lebih terpusat dan menyebar dengan rata-rata yang lebih rendah di sepanjang kedua sumbu. Cluster 0 mewakili kelompok dengan karakteristik yang lebih rata-rata atau umum dalam data (usia sedang, tekanan darah sedang).
+**Cluster 0 (Ungu)**: Titik-titik berwarna ungu tersebar terutama di sekitar nilai normal untuk Age dan RestingBP. Mereka tampak lebih terpusat dan menyebar dengan rata-rata yang lebih rendah di sepanjang kedua sumbu. Cluster 0 mewakili kelompok dengan karakteristik yang lebih rata-rata atau umum dalam data (usia muda, tekanan darah rendah).
 
-**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian bawah sumbu Y (RestingBP) dengan rentang nilai yang lebih sempit untuk Age. Cluster 1 ini mungkin terdiri dari individu dengan tekanan darah yang lebih rendah dan rentang usia tertentu.
+**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian bawah sumbu Y (RestingBP) dengan rentang nilai yang lebih sempit untuk Age. Cluster 1 ini mungkin terdiri dari individu dengan usia sedang dan tekanan darah sedang.
 
-**Cluster 2 (Kuning)**: Titik-titik berwarna kuning cenderung lebih tersebar ke kanan pada sumbu X dan ke atas pada sumbu Y, menunjukkan bahwa cluster 2 ini mungkin terdiri dari individu dengan tekanan darah yang lebih tinggi dan usia yang lebih tua.
+**Cluster 2 (Kuning)**: Titik-titik berwarna kuning cenderung lebih tersebar ke kanan pada sumbu X dan ke atas pada sumbu Y, menunjukkan bahwa cluster 2 ini mungkin terdiri dari individu dengan usia tua dan tekanan darah tinggi.
 
 
 ```python
+#Clustering tekanan darah istirahat dan detak jantung maksimum
+data = {
+    'MaxHR': [172, 156, 98, 108, 122, 132, 141, 115, 174, 173],
+    'RestingBP': [140, 160, 130, 138, 140, 110, 144, 130, 130, 138],
+   
+}
+df1 = pd.DataFrame(data)
+
+# Memilih fitur yang akan di-scale
+features = ['MaxHR', 'RestingBP']
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(df1[features])
+
+# Mengubah hasil scaling menjadi DataFrame
+scaled_df = pd.DataFrame(scaled_features, columns=features)
+
 # Melakukan clustering dengan jumlah cluster yang optimal
 optimal_clusters = 3  # Misalkan berdasarkan metode Elbow
 kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=0)
@@ -1410,44 +1463,83 @@ df1['Cluster'] = clusters
 
 # Visualisasi hasil clustering
 plt.figure(figsize=(6, 3))
-sns.scatterplot(x=scaled_df['MaxHR'], y=scaled_df['RestingBP'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
+sns.scatterplot(x=df1['MaxHR'], y=df1['RestingBP'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
 plt.title('Clustering K-Means')
 plt.xlabel('MaxHR')
 plt.ylabel('RestingBP')
 plt.legend(title='Cluster')
 plt.show()
+
 ```
+
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1426: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+      warnings.warn(
+    
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7ca3955b70cec0bfa56328139e8212ccec2a808c/clustering%20detak%20jantung%20maksimum%20dan%20tekanan%20darah%20istirahat.png'>
-
-
+![png](output_48_1.png)
     
 
 
 Grafik di atas menggambarkan klastering antara **MaxHR (detak jantung maksimum) dengan RestingBP (tekanan darah istirahat)** 
 
-**Cluster 0 (Ungu)**: Titik-titik berwarna ungu cenderung berada di bagian kanan plot, menunjukkan responden dengan MaxHR lebih tinggi. Mereka tersebar lebih luas di sepanjang sumbu Y (RestingBP).
+**Cluster 0 (Ungu)**: Titik-titik berwarna ungu cenderung berada di bagian kanan plot, menunjukkan responden dengan individu MaxHR rendah dan RestingBP rendah.
 
-**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian tengah-bawah plot, menunjukkan responden dengan RestingBP yang lebih rendah dan nilai MaxHR yang bervariasi.
+**Cluster 1 (Hijau)**: Titik-titik berwarna hijau cenderung berada di bagian tengah-bawah plot, menunjukkan responden dengan individu MaxHR sedang dan RestingBP sedang.
 
-**Cluster 2 (Kuning)**: Titik-titik berwarna kuning tersebar di seluruh rentang MaxHR tetapi lebih terkonsentrasi di bagian tengah atas sumbu Y (RestingBP), menunjukkan responden dengan RestingBP yang lebih tinggi.
-
-## **Logistic Regression** 
+**Cluster 2 (Kuning)**: Titik-titik berwarna kuning tersebar di seluruh rentang plot, menunjukkan responden dengan individu MaxHR tinggi dan RestingBP tinggi.
 
 
 ```python
-pip install --upgrade scikit-learn
+#Clustering umur dan penderita gagal jantung
+data = {
+    'Age': [40, 49, 37, 48, 54, 45, 68, 57, 57, 38],
+    'HeartDisease': [0, 1, 0, 1, 0, 1, 1, 1, 1, 0],
+   
+}
+df1 = pd.DataFrame(data)
+
+# Memilih fitur yang akan di-scale
+features = ['Age', 'HeartDisease']
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(df1[features])
+
+# Mengubah hasil scaling menjadi DataFrame
+scaled_df = pd.DataFrame(scaled_features, columns=features)
+
+# Melakukan clustering dengan jumlah cluster yang optimal
+optimal_clusters = 2  # Misalkan berdasarkan metode Elbow
+kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=0)
+clusters = kmeans.fit_predict(scaled_df)
+
+# Menambahkan hasil clustering ke DataFrame asli
+df1['Cluster'] = clusters
+
+# Visualisasi hasil clustering
+plt.figure(figsize=(6, 3))
+sns.scatterplot(x=df1['Age'], y=df1['HeartDisease'], hue=df1['Cluster'], palette='viridis', s=100, alpha=0.6)
+plt.title('Clustering K-Means')
+plt.xlabel('Age')
+plt.ylabel('HeartDisease')
+plt.legend(title='Cluster')
+plt.show()
+
 ```
 
-    Requirement already satisfied: scikit-learn in c:\users\asus vivobook\anaconda3\lib\site-packages (1.5.0)
-    Requirement already satisfied: numpy>=1.19.5 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.24.3)
-    Requirement already satisfied: scipy>=1.6.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.11.1)
-    Requirement already satisfied: joblib>=1.2.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (1.2.0)
-    Requirement already satisfied: threadpoolctl>=3.1.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from scikit-learn) (3.5.0)
-    Note: you may need to restart the kernel to use updated packages.
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\cluster\_kmeans.py:1426: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.
+      warnings.warn(
     
+
+
+    
+![png](output_50_1.png)
+    
+
+
+## **Logistic Regression** 
+
+pip install --upgrade scikit-learn
 
 
 ```python
@@ -1527,7 +1619,7 @@ classifier_lr = LogisticRegression(random_state = 0,C=10,penalty= 'l2')
 model(classifier_lr)
 ```
 
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1535,7 +1627,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1543,7 +1635,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1551,7 +1643,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1559,7 +1651,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1567,7 +1659,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1575,7 +1667,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1583,7 +1675,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1591,7 +1683,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1599,7 +1691,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1607,7 +1699,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1615,7 +1707,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1623,7 +1715,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1631,7 +1723,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1639,7 +1731,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1647,7 +1739,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1655,7 +1747,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1663,7 +1755,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1671,7 +1763,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1679,7 +1771,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1687,7 +1779,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1695,7 +1787,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1703,7 +1795,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1711,7 +1803,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1719,7 +1811,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1727,7 +1819,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1735,7 +1827,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1743,7 +1835,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1751,7 +1843,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1759,7 +1851,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1767,7 +1859,7 @@ model(classifier_lr)
     Please also refer to the documentation for alternative solver options:
         https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
       n_iter_i = _check_optimize_result(
-    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+    C:\Users\ASUS VIVOBOOK\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
     STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
     
     Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -1777,16 +1869,14 @@ model(classifier_lr)
       n_iter_i = _check_optimize_result(
     
 
-    Accuracy: 84.78%
-    Cross Validation Score: 91.06%
-    ROC_AUC Score: 84.70%
+    Accuracy: 85.87%
+    Cross Validation Score: 91.04%
+    ROC_AUC Score: 85.82%
     
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/6c593ebff6536b8a31457f1375c2d6b2db8bd433/logistic%20regression.png'>
-
-
+![png](output_57_2.png)
     
 
 
@@ -1797,20 +1887,18 @@ model_evaluation(classifier_lr)
 
                   precision    recall  f1-score   support
     
-               0       0.86      0.82      0.84        89
-               1       0.84      0.87      0.86        95
+               0       0.86      0.84      0.85        89
+               1       0.86      0.87      0.86        95
     
-        accuracy                           0.85       184
-       macro avg       0.85      0.85      0.85       184
-    weighted avg       0.85      0.85      0.85       184
+        accuracy                           0.86       184
+       macro avg       0.86      0.86      0.86       184
+    weighted avg       0.86      0.86      0.86       184
     
     
 
 
     
-<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/6c593ebff6536b8a31457f1375c2d6b2db8bd433/model%20evaluasi.png'>
-
-
+![png](output_58_1.png)
     
 
 
