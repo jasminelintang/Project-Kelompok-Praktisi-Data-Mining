@@ -828,12 +828,10 @@ plt.show()
 ```
 
 
+   <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/heatmap%20korelasi%202.png'>
+
+
     
-![png](output_22_0.png)
-    
-
-
-
 ```python
 from sklearn.feature_selection import SelectKBest, f_classif
 import matplotlib.pyplot as plt
