@@ -805,11 +805,8 @@ sns.heatmap(df1_encoded.corr(), cmap='coolwarm', annot=True)
 plt.show()
 ```
 
-
     
-https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/35a20bbda1ad0970d94b59e3dcefa41be43277a0/heatmap%20korelasi.png
-    
-
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/35a20bbda1ad0970d94b59e3dcefa41be43277a0/heatmap%20korelasi.png'>
 
 
 *   Warna merah menunjukkan korelasi positif
