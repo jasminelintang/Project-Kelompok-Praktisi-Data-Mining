@@ -807,7 +807,7 @@ plt.show()
 
 
     
-![png](output_20_0.png)
+https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/35a20bbda1ad0970d94b59e3dcefa41be43277a0/heatmap%20korelasi.png
     
 
 
