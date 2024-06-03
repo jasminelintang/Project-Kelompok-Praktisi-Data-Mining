@@ -859,7 +859,8 @@ plt.show()
 
 
     
-![png](output_23_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/anova%20score.png'>
+
     
 
 
@@ -1005,7 +1006,7 @@ fig.tight_layout(pad = 2)
 
 
     
-![png](output_26_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20faktor.png'>
     
 
 
@@ -1072,8 +1073,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)
-    
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/perbandingan%20antara%20penderita%20dan%20bukan%20berdasarkan%20jumlah%20responden.png'>
 
 
 Dari responden yang terdapat pada data tersebut, menjelaskan bahwa lebih banyak responden yang memiliki penyakit gagal jantung dibandingkan dengan responden yang tidak memillki penyakit gagal jantung
