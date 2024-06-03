@@ -1102,7 +1102,8 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/perbandingan%20beberapa%20faktor%20vs%20heartdisease.png'>
+
     
 
 
@@ -1183,8 +1184,8 @@ plt.title('ST_Slope');
     
 
 
-    
-![png](output_35_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/pie%20chart%20perbandingan%20setiap%20kategori%20pada%20faktor.png'>    
+
     
 
 
