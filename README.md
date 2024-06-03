@@ -1271,13 +1271,13 @@ for i in [-1,-2]:
 
 
     
-![png](output_39_0.png)
+ <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7d31492e416ef1f38b5ff4f6cce9535452c27e00/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya.png'>
     
 
 
 
     
-![png](output_39_1.png)
+ <img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/7d31492e416ef1f38b5ff4f6cce9535452c27e00/grafik%20jenis%20nyeri%20dada%20vs%20faktor%20lainnya%202.png'>
     
 
 
@@ -1363,8 +1363,9 @@ plt.show()
 
 
     
-![png](output_44_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/clustering%20usia%20dan%20kolesterol%202.png'>
     
+
 
 
 Grafik di atas menggambarkan klastering antara **Usia dengan Kolesterol** 
@@ -1418,7 +1419,7 @@ plt.show()
 
 
     
-![png](output_46_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/clustering%20usia%20dan%20tekanan%20darah%20istirahat%202.png'>
     
 
 
@@ -1473,7 +1474,7 @@ plt.show()
 
 
     
-![png](output_48_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/clustering%20detak%20jantung%20maksimum%20dan%20tekanan%20darah%20istirahat%202.png'>
     
 
 
@@ -1528,7 +1529,7 @@ plt.show()
 
 
     
-![png](output_50_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/clustering%20umur%20dan%20penderita%20gagal%20jantung.png'>
     
 
 
@@ -1871,7 +1872,7 @@ model(classifier_lr)
 
 
     
-![png](output_57_2.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/logistic%20regression.png'>
     
 
 
@@ -1893,7 +1894,8 @@ model_evaluation(classifier_lr)
 
 
     
-![png](output_58_1.png)
+<img src='https://github.com/jasminelintang/Project-Kelompok-Praktisi-Data-Mining/blob/9258f673b0bb3120a1acba4ebff8db2d1d2167cb/model%20evaluasi.png'>
+    
     
 
 
